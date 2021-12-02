@@ -1,3 +1,17 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /api/books/{page}
+    controller: App\Controller\BookController::index
+    methods: GET|HEAD
+    requirements:
+        page: '\d+'
+
+
+show:
+    path: /api/books/show/{id}
+    controller: App\Controller\BookController::show
+    methods: GET|HEAD
+
+store:
+    path: /api/books/store
+    controller: App\Controller\BookController::store
+    methods: POST
